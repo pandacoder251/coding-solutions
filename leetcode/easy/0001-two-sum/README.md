@@ -14,28 +14,33 @@ You can return the answer in any order.
 
  **Example 1:** 
 
-```
-Input: nums = [2,7,11,15], target = 9
-Output: [0,1]
-Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+ **Input:**  `nums = [2,7,11,15], target = 9`
 
-```
+ **Output:**  `[0,1]`
+
+ **Explanation:** 
+
+The sum of `nums[0]` and `nums[1]` is `2 + 7 = 9`, which equals the target. Therefore, the indices `[0, 1]` are returned.
 
  **Example 2:** 
 
-```
-Input: nums = [3,2,4], target = 6
-Output: [1,2]
+ **Input:**  `nums = [3,2,4], target = 6`
 
-```
+ **Output:**  `[1,2]`
+
+ **Explanation:** 
+
+The sum of `nums[1]` and `nums[2]` is `2 + 4 = 6`, which equals the target. Therefore, the indices `[1, 2]` are returned.
 
  **Example 3:** 
 
-```
-Input: nums = [3,3], target = 6
-Output: [0,1]
+ **Input:**  `nums = [3,3], target = 6`
 
-```
+ **Output:**  `[0,1]`
+
+ **Explanation:** 
+
+The sum of `nums[0]` and `nums[1]` is `3 + 3 = 6`, which equals the target. Therefore, the indices `[0, 1]` are returned.
 
  
 
@@ -53,54 +58,47 @@ Output: [0,1]
 ## Solution
 
 **Language:** Java  
-**Runtime:** 2 ms (beats 99.40%)  
-**Memory:** 47.2 MB (beats 41.13%)  
-**Submitted:** 2026-10-11T11:55:54.093Z  
+**Runtime:** 3 ms (beats 59.42%)  
+**Memory:** 46.6 MB (beats 83.63%)  
+**Submitted:** 2026-11-10T05:30:34.257Z  
 
 ```java
-/* ARRAY
+/*
+//Bruteforce
 class Solution {
-
     public int[] twoSum(int[] nums, int target) {
-
         for (int i = 0; i < nums.length; i++) {
-
             for (int j = i + 1; j < nums.length; j++) {
-
                 if (nums[i] + nums[j] == target) {
-                    return new int[] {i, j};
+                    return new int[] { i, j };
                 }
-
             }
         }
-
         return new int[] {};
     }
 }
 */
+//optimized
 
-//Hashing
 import java.util.HashMap;
 
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-
-        HashMap<Integer, Integer> map = new HashMap<>();
-
-        for (int i = 0; i < nums.length; i++) {
-
-            int needed = target - nums[i];
-
-            if (map.containsKey(needed)) {
-                return new int[] {map.get(needed), i};
+        HashMap<Integer, Integer> hp = new HashMap<>(); 
+        int n = nums.length;
+        
+        for (int i = 0; i < n; i++) { 
+            int goal = target - nums[i];
+            
+            if (hp.containsKey(goal)) {
+                return new int[] { hp.get(goal), i };
             }
-
-            map.put(nums[i], i);
+            hp.put(nums[i], i); 
         }
-
         return new int[] {};
     }
 }
+
 ```
 
 ---
