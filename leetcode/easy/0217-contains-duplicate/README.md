@@ -44,9 +44,9 @@ All elements are distinct.
 ## Solution
 
 **Language:** Java  
-**Runtime:** 38 ms (beats 5.13%)  
-**Memory:** 98.3 MB (beats 77.85%)  
-**Submitted:** 2026-11-10T05:24:07.465Z  
+**Runtime:** 2 ms  
+**Memory:** 41.7 MB  
+**Submitted:** 2026-11-10T05:24:49.300Z  
 
 ```java
 /*class Solution{
@@ -65,8 +65,7 @@ All elements are distinct.
 
 
         //optimized
-
-        import java.util.Arrays;
+import java.util.Arrays;
 
 class Solution {
     public boolean containsDuplicate(int[] nums) {
