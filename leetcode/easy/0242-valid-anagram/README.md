@@ -34,14 +34,14 @@ Given two strings `s` and `t`, return `true` if `t` is an anagram of `s`, and `f
 ## Solution
 
 **Language:** Java  
-**Runtime:** 4 ms (beats 86.34%)  
-**Memory:** 46 MB (beats 43.55%)  
-**Submitted:** 2026-11-10T05:42:33.477Z  
+**Runtime:** 6 ms (beats 49.53%)  
+**Memory:** 44 MB (beats 87.55%)  
+**Submitted:** 2026-11-10T06:16:46.870Z  
 
 ```java
 import java.util.*;
 //bruteforce
-class Solution {
+/*class Solution {
     public boolean isAnagram(String s, String t) {
        
         if (s.length() != t.length()) {
@@ -55,6 +55,29 @@ class Solution {
         Arrays.sort(tArray);
         
         return Arrays.equals(sArray, tArray);
+    }
+}*/
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+        
+    
+        int[] counts = new int[26]; 
+        
+        for (int i = 0; i < s.length(); i++) {
+            counts[s.charAt(i) - 'a']++;
+            counts[t.charAt(i) - 'a']--;
+        }
+        
+        for (int score : counts) {
+            if (score != 0) {
+                return false; 
+            }
+        }
+        
+        return true; 
     }
 }
 
