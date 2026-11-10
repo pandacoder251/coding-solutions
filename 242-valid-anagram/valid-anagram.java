@@ -1,5 +1,5 @@
 import java.util.*;
-
+//bruteforce
 class Solution {
     public boolean isAnagram(String s, String t) {
        
