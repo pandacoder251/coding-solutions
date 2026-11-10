@@ -35,12 +35,12 @@ Given two strings `s` and `t`, return `true` if `t` is an anagram of `s`, and `f
 
 **Language:** Java  
 **Runtime:** 4 ms (beats 86.34%)  
-**Memory:** 45.5 MB (beats 48.87%)  
-**Submitted:** 2026-11-10T05:36:56.541Z  
+**Memory:** 46 MB (beats 43.55%)  
+**Submitted:** 2026-11-10T05:42:33.477Z  
 
 ```java
 import java.util.*;
-
+//bruteforce
 class Solution {
     public boolean isAnagram(String s, String t) {
        
